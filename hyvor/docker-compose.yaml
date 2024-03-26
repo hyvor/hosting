@@ -1,0 +1,11 @@
+version: "3.3"
+services:
+    #mysql 8
+    db:
+        image: mysql:8.0
+
+    hyvor:
+        image: hyvor/core
+        restart: always
+        ports:
+            - "8080:8080"

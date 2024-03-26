@@ -1,0 +1,21 @@
+# An example caddy configuration to run multiple components on a single server
+# 
+# First, make sure you export ports for each component correctly
+# The following example assumes you have the following components and ports: 
+# 	core - 8000
+# 	talk - 8001
+# 	blogs - 8002
+# 
+# And, `hyvor.example.com` is the domain you want to use to host HYVOR
+
+hyvor.example.com {
+	reverse_proxy localhost:8000
+}
+
+talk.hyvor.example.com {
+	reverse_proxy localhost:8001
+}
+
+blogs.hyvor.example.com {
+	reverse_proxy localhost:8002
+}
